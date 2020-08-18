@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path:
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  activemq:
+    broker-url:
+  cloud:
+    discovery:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hardess?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+
+info:
+  app-name: @project.name@
+  app-version: @version@
